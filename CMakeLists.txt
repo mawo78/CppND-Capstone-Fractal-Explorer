@@ -1,10 +1,15 @@
 cmake_minimum_required(VERSION 3.7)
 
-add_definitions(-std=c++17)
-
-set(CXX_FLAGS "-Wall")
+set(CXX_FLAGS "-Wall -pthread -std=c++17")
 set(CMAKE_CXX_FLAGS, "${CXX_FLAGS}")
 
-project(HelloWorld)
+project(FractalExplorer)
 
-add_executable(HelloWorld src/main.cpp)
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+link_directories(${OpenCV_LIBRARY_DIRS})
+add_definitions(${OpenCV_DEFINITIONS})
+
+add_executable(FractalExplorer src/main.cpp)
+
+target_link_libraries(FractalExplorer ${OpenCV_LIBS})
