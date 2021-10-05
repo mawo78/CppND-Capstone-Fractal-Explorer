@@ -23,7 +23,7 @@ protected:
 	void calcBounds(double, double, double);
 	double transform(double, double, double, double, double) const;
 	cv::Scalar findColor(unsigned int) const;
-	virtual void calcOneRow(cv::Mat&, int);
+	virtual void calcOneRow(cv::Mat&, unsigned int);
 
 private:
 	double m_dZoomLvl;

@@ -37,7 +37,7 @@ cv::Scalar MandelbrotFrac::findColor(unsigned int it) const {
 }
 
 // Calculate and paint one row of pixels
-void MandelbrotFrac::calcOneRow(cv::Mat& img, int i) {
+void MandelbrotFrac::calcOneRow(cv::Mat& img, unsigned int i) {
     double x, y, x0, y0, pom;
     for (unsigned int j = 0; j < m_uiResolutionX; j++) {
         x = 0.0, y = 0.0;

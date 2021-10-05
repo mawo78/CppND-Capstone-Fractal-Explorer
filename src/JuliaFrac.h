@@ -6,7 +6,7 @@ class JuliaFrac :
 public:
     JuliaFrac(unsigned int, unsigned int);
 protected:
-    virtual void calcOneRow(cv::Mat&, int) override;
+    virtual void calcOneRow(cv::Mat&, unsigned int) override;
     int julia(const std::complex<double>&, const std::complex<double>&) const;
 };
 

@@ -18,7 +18,7 @@ int JuliaFrac::julia(const std::complex<double>& c, const std::complex<double>& 
         return static_cast<unsigned int>(n + 1.0 - log(log2(abs(z))));
 }
 
-void JuliaFrac::calcOneRow(cv::Mat& img, int i) {
+void JuliaFrac::calcOneRow(cv::Mat& img, unsigned int i) {
     //arbitrary chosen parameter
     std::complex<double> C(0.285, 0.01);
 
