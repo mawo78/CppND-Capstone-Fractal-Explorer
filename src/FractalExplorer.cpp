@@ -96,6 +96,5 @@ void FractalExplorer::show() {
     cv::imshow(FE_WINDOW_NAME, m_img);
 
     cv::waitKey(0);
-    cv::destroyWindow(FE_WINDOW_NAME);
-
+    cv::destroyAllWindows();
 }
