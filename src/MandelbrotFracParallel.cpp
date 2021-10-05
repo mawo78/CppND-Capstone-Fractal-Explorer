@@ -11,7 +11,7 @@ void MandelbrotFracParallel::calculate(cv::Mat& img) {
 
     std::vector<std::future<void>> tasks;
     for (unsigned int i = 0; i < m_uiResolutionY; i++) {
-        auto future = std::async(&MandelbrotFracParallel::calcOneRow, this, img, i);
+        auto future = std::async(&MandelbrotFracParallel::calcOneRow, this, std::ref(img), i);
         tasks.emplace_back(std::move(future));
     }
     for (auto&& future : tasks) {
