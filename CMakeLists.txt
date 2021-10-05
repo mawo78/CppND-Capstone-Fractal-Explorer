@@ -10,6 +10,10 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 link_directories(${OpenCV_LIBRARY_DIRS})
 add_definitions(${OpenCV_DEFINITIONS})
 
-add_executable(FractalExplorer src/main.cpp)
+# Find all executables
+file(GLOB project_SRCS src/*.cpp) #src/*.h
+
+# Add project executable
+add_executable(FractalExplorer ${project_SRCS})
 
 target_link_libraries(FractalExplorer ${OpenCV_LIBS})
